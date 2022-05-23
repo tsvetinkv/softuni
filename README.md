@@ -1,2 +1,2 @@
 # softuni
-my js exercises in softuni courses
+all of my things in js courses from softuni
