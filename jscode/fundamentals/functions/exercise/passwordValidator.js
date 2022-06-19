@@ -25,7 +25,18 @@ function onlyLettersAndNumbers(str) {
 
   function containsNumber(str) {
     
-    return /[0-9]/.test(str);
+let counter = 0;
+for (const symbol of pass) {
+    let cuurChar = symbol.charCodeAt(0);
+    if (cuurChar >= 48 && cuurChar <= 57){
+        counter++;
+    }
+}
+if (counter >= 2){
+    return true;
+}else{
+    return false;
+}
   }
 
 }passwordValidator('logIn')
