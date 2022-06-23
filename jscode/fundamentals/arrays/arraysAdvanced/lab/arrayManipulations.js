@@ -1,12 +1,55 @@
 function arrayManipulations(commands) {
   let arr = commands.shift().split(" ").map(Number);
-  
-  //     Add {number}: add a number to the end of the array
+  //let manipulation = commands.shift().split(" ");
+  let index;
+for (let i = 0; i <commands.length; i++) {
+  let [command, firstNum, secondNum]= commands[i].split(" ");
+  firstNum = Number(firstNum)
+  secondNum = Number(secondNum)
+  switch (command) {
 
-  // · Remove {number}: remove all occurrences of a particular number from the array
+    case "Add":
+      arr.push(firstNum);
 
-  // · RemoveAt {index}: removes number at a given index
+      break;
 
-  // · Insert {number} {index}: inserts a number at a given index
+    case "Remove":
+      // for (let el of arr) {
+      //   if (manipulation[1] == el) {
+      //     let i = arr.indexOf(el);
+      //     arr.splice(i, 1);
+      //   }
+      //}
+      arr= arr.filter(el => el != firstNum);
+     
+    break;
+
+    case "RemoveAt":
+     index = Number(firstNum);;
+      arr.splice(index, 1);
+     
+      break;
+
+    case "Insert":
+      index = Number(secondNum);
+      let num = Number(firstNum);
+      arr.splice(index, 0, num);
+      manipulation = commands;
+      break;
+  }
 }
-arrayManipulations(["4 19 2 53 6 43", "Remove 2"]);
+  console.log(arr.join(" "));
+
+}
+
+arrayManipulations([
+  "4 19 2 53 6 43",
+
+  "Add 3",
+
+  "Remove 2",
+
+  "RemoveAt 1",
+
+  "Insert 8 3",
+]); //4 53 6 8 43 3
