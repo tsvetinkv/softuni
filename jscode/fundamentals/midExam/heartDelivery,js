@@ -1,0 +1,56 @@
+function heartDelivery(array) {
+  let heartsNeeded = array.shift().split("@").map(Number);
+  let currentPossition = 0;
+  while (array != "Love!") {
+    let jumps = array.shift().split(" ");
+    let jumpLength = Number(jumps.pop());
+    if (jumps == "Jump") {
+      currentPossition += jumpLength;
+      if (heartsNeeded.length - 1 < currentPossition) {
+        currentPossition = 0;
+      }
+      if (heartsNeeded[currentPossition] == 0) {
+        console.log(`Place ${heartsNeeded[currentPossition]} already had Valentine's day.`);
+        console.log(`Place ${currentPossition} already had Valentine's day.`);
+      } else {
+        heartsNeeded[currentPossition] -= 2;
+      }
+      if (heartsNeeded[currentPossition] == 0) {
+        console.log(`Place ${currentPossition} has Valentine's day.`);
+      }
+    }
+
+  }
+  console.log(`Cupid's last position was ${currentPossition}.`);
+  let counter = heartsNeeded.filter(z => z > 0)
+  let count = 0;
+  for (let el of counter) {
+    count++
+  }
+  let sum = 0;
+  for (let el of heartsNeeded) {
+    sum += el
+  }
+  if (sum == 0)
+  {
+      console.log("Mission was successful.");
+  }
+  else
+  {
+      console.log(`Cupid has failed ${count} places.`);
+  }
+}
+heartDelivery(["2@4@2",
+"Jump 2",
+"Jump 2",
+"Jump 8",
+"Jump 3",
+"Jump 1",
+"Love!"]);
+
+// Place 2 has Valentine's day.
+// Place 0 has Valentine's day.
+// Place 0 already had Valentine's day.
+// Place 0 already had Valentine's day.
+// Cupid's last position was 1.
+// Cupid has failed 1 places.
