@@ -1,5 +1,17 @@
 function processOddNumbers(arr) {
-  let sortedArr = arr.sort((a, b) => a - b);
-  let smallestTwo = sortedArr.slice(0, 2)
-  console.log(smallestTwo.join(' '));
-}processOddNumbers([30, 15, 50, 5])
+  let oddPosition = [];
+  let res = [];
+for (let i = 0; i < arr.length; i++) {
+  if (i % 2 != 0) {
+    oddPosition.push(arr[i]);
+
+  }
+}
+for (let el of oddPosition) {
+  res.push(el * 2);
+ 
+}
+res.reverse();
+ console.log(res.join(' '));
+}
+processOddNumbers([3, 0, 10, 4, 7, 3])
