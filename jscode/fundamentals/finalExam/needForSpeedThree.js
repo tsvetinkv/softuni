@@ -95,4 +95,5 @@ needForSpeedThree([
 //Audi A6 -> Mileage: 10000 kms, Fuel in the tank: 65 lt.
 //Mercedes CLS -> Mileage: 10594 kms, Fuel in the tank: 24 lt.
 //Volkswagen Passat CC -> Mileage: 45678 kms, Fuel in the tank: 5 lt.
+
 // time: 56 minutes
